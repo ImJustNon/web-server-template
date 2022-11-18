@@ -1,0 +1,15 @@
+.set-div {
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.background-image {
+    margin: 0;
+    padding: 0;
+    background: url("/assets/images/cover.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
