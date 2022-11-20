@@ -1,7 +1,8 @@
 {
   "name": "sbtvc-dormitory-system",
-  "version": "1.0.0",
-  "main": "index.js",
+  "description": "express web server template",
+  "version": "1.1.2",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
     "start": "node ./server.js",
@@ -24,5 +25,10 @@
     "path": "^0.12.7",
     "pg": "^8.8.0",
     "popper.js": "^1.16.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImJustNon/web-server-template.git"
+  },
+  "author": "ImJustNon"
 }
