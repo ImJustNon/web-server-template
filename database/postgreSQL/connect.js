@@ -28,22 +28,18 @@ const query = async ({sql,option}) =>{
         // sql ok
         if(typeof sql === "string"){
             await connection.query(sql,(err, result) =>{
-                if(!err){
-                    resolve(result);
-                }
-                else {
-                    console.error(err)
-                }
+                resolve({
+                    error: err,
+                    result: result,
+                });
             });
         }
         else if(typeof sql === "string" && typeof option === "object"){
             await connection.query(sql, option, (err, result) =>{
-                if(!err){
-                    resolve(result);
-                }
-                else {
-                    console.error(err)
-                }
+                resolve({
+                    error: err,
+                    result: result,
+                });
             });
         }
     });

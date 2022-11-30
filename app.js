@@ -27,7 +27,7 @@ fs.readdirSync("./routers").forEach(async files => {
 fs.readdirSync("./database").forEach(async folders => {
     fs.readdirSync(`./database/${folders}`).forEach(async files => {
         require(`./database/${folders}/${files}`).connect();
-        console.log(`[Database] Loaded : ${files}`);
+        console.log(`[Database] Loaded : ${folders}/${files}`);
     });
 });
 

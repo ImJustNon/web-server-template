@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 const app = require("./app.js");
-const debug = require("debug")("assignment1:server");
+const debug = require("debug")("webserver");
 const http = require("http");
 const config = require("./configs/config.js");
  
@@ -49,11 +49,11 @@ function onError(error) {
      // handle specific listen errors with friendly messages
      switch (error.code) {
        case "EACCES":
-         console.error(bind + " requires elevated privileges");
+         console.error("[App] " + bind + " requires elevated privileges");
          process.exit(1);
          break;
        case "EADDRINUSE":
-         console.error(bind + " is already in use");
+         console.error("[App] " + bind + " is already in use");
          process.exit(1);
          break;
        default:
@@ -67,5 +67,5 @@ function onError(error) {
  function onListening() {
     let addr = server.address();
     let bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
-    debug("Listening on " + bind);
+    console.log("[App] Listening on " + bind);
  }

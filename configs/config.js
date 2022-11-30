@@ -1,10 +1,10 @@
 module.exports = {
     database: {
         postgreSQL: {
-            user: 'postgres',
-            host: '203.78.129.233',
-            database: 'portfolio',
-            password: 'Non_912108',
+            user: '',
+            host: '',
+            database: '',
+            password: '',
             port: 5432,
             // connectionString: string, 
             // ssl: any, 
@@ -16,7 +16,7 @@ module.exports = {
             // idle_in_transaction_session_timeout: number
         },
         mongoDB: {
-            URI: "mongodb+srv://Kwan-0111:LIVPbGPbI6fVLM9E@cluster0.rp8ie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+            URI: "",
             options: {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
