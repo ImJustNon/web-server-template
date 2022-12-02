@@ -5,6 +5,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const fs = require('fs');
+const bodyParser = require('body-parser');
+const urlencoded = bodyParser.urlencoded({
+    limit: '50mb',
+    extended: true,
+});
 
 
 // database setup
@@ -23,13 +28,8 @@ fs.readdirSync("./routers").forEach(async files => {
     console.log(`[Routes] Loaded : ${files}`);
 });
 
-// database setup
-fs.readdirSync("./database").forEach(async folders => {
-    fs.readdirSync(`./database/${folders}`).forEach(async files => {
-        require(`./database/${folders}/${files}`).connect();
-        console.log(`[Database] Loaded : ${folders}/${files}`);
-    });
-});
+//setup db
+require("./database/index.js");
 
 /*
 // point mongoose to the DB URI
@@ -51,9 +51,7 @@ app.set('view engine', 'ejs');  //express -e
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ 
-    extended: true, 
-}));
+app.use(urlencoded);
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'./public')));
 app.use(express.static(path.join(__dirname,'./node_modules')));

@@ -1,21 +1,20 @@
-const { Client } = require('pg');
-const config = require("../../configs/config.js");
+const mysql = require('mysql2');
+const config = require('../../configs/config.js');
 
-const connection = new Client(config.database.postgreSQL);
+const connection = mysql.createConnection(config.database.mySQL);
 
-
-const connect = async () =>{
-    connection.connect((err) => {
-        if(err) {
-            console.log(`[Database] PostgreSQL : Cannot connect to database ERROR : ${err}`);
+const connect = async() =>{
+    connection.connect((err) =>{
+        if (err) {
+            console.log(`[Database] mySQL : Cannot connect to database ERROR : ${err}`);
         } 
         else {
-            console.log("[Database] PostgreSQL : Connected");
+            console.log("[Database] mySQL : Connected");
         }
     });
 }
 
-const query = async ({ sql, option }) =>{
+const query = async({ sql, option }) =>{
     return new Promise(async(resolve, reject) =>{
         // no  sql
         if(typeof sql === "undefined"){
