@@ -1,2 +1,2 @@
 - 1 ``` yarn install ```
-- 2 `yarn start` or `yarn dev` to use nodemon
+- 2 `yarn start` or `yarn dev` 
